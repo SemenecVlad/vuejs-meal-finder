@@ -24,7 +24,7 @@ onMounted(() => {
     <BackButton />
   </div>
   <div class="max-w-[800px] mx-auto p-8">
-    <h1 class="text-6xl font-bold mb-4">{{ meal.strMeal }}</h1>
+    <h1 class="text-4xl font-bold mb-4">{{ meal.strMeal }}</h1>
     <img :src="meal.strMealThumb" :alt="meal.strMeal" class="max-w-full" />
     <div class="grid grid-cols-1 md:grid-cols-3 text-lg py-2">
       <div>
