@@ -1,17 +1,4 @@
-type MealShortItem = {
-  strMeal: string;
-  strMealThumb: string;
-  idMeal: string;
-};
-
-type MealCategory = {
-  idCategory: string;
-  strCategory: string;
-  strCategoryThumb: string;
-  strCategoryDescription: string;
-};
-
-type MealFullItem = {
+export type MealFullItemDto = {
   idMeal: string;
   strMeal: string;
   strDrinkAlternate: string | null;
@@ -66,12 +53,3 @@ type MealFullItem = {
   strCreativeCommonsConfirmed: string | null;
   dateModified: any;
 };
-
-type MealIngredient = {
-  idIngredient: string;
-  strIngredient: string;
-  strDescription: string | null;
-  strType: string | null;
-};
-
-export type { MealShortItem, MealCategory, MealFullItem, MealIngredient };

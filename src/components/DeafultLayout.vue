@@ -1,11 +1,11 @@
+<script setup lang="ts">
+import { HeaderNavbar } from "@components";
+</script>
+
 <template>
-  <Navbar />
+  <HeaderNavbar />
 
   <main>
     <router-view />
   </main>
 </template>
-
-<script setup lang="ts">
-import Navbar from "./Navbar.vue";
-</script>

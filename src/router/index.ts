@@ -1,59 +1,60 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import MealsByNameVue from "../views/MealsByName.vue";
-import MealsByLetterVue from "../views/MealsByLetter.vue";
-import MealsByIngredientsVue from "../views/MealsByIngredients.vue";
-import DeafultLayoutVue from "../components/DeafultLayout.vue";
-import GuestLayoutVue from "../components/GuestLayout.vue";
-import MealDetailsVue from "../views/MealDetails.vue";
-import IngredientsVue from "../views/Ingredients.vue";
-import MealsByCategoryVue from "../views/MealsByCategory.vue";
+import { DeafultLayout, GuestLayout } from "@components";
+import {
+  HomeView,
+  MealsByNameView,
+  MealsByCategoryView,
+  MealsByLetterView,
+  IngredientsView,
+  MealsByIngredientsView,
+  MealDetailsView,
+} from "@views";
 
 const routes = [
   {
     path: "/",
-    component: DeafultLayoutVue,
+    component: DeafultLayout,
     children: [
       {
         path: "/",
         name: "home",
-        component: Home,
+        component: HomeView,
       },
       {
         path: "/by-name/:name?",
         name: "byName",
-        component: MealsByNameVue,
+        component: MealsByNameView,
       },
       {
         path: "/by-category/:category?",
         name: "byCategory",
-        component: MealsByCategoryVue,
+        component: MealsByCategoryView,
       },
       {
         path: "/by-letter/:letter?",
         name: "byLetter",
-        component: MealsByLetterVue,
+        component: MealsByLetterView,
       },
       {
         path: "/ingredients",
         name: "ingredients",
-        component: IngredientsVue,
+        component: IngredientsView,
       },
       {
         path: "/by-ingredient/:ingredient?",
         name: "byIngredient",
-        component: MealsByIngredientsVue,
+        component: MealsByIngredientsView,
       },
       {
         path: "/meal/:id",
         name: "mealDetails",
-        component: MealDetailsVue,
+        component: MealDetailsView,
       },
     ],
   },
   {
     path: "/guest",
-    component: GuestLayoutVue,
+    component: GuestLayout,
   },
 ];
 

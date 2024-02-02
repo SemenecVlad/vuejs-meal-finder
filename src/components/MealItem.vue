@@ -1,3 +1,14 @@
+<script setup lang="ts">
+import { YouTubeButton } from "@components";
+
+const { meal } = defineProps({
+  meal: {
+    type: Object,
+    required: true,
+  },
+});
+</script>
+
 <template>
   <div class="bg-white shadow rounded-xl hover:scale-105 transition-all">
     <router-link :to="{ name: 'mealDetails', params: { id: meal.idMeal } }">
@@ -27,14 +38,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import YouTubeButton from "./YouTubeButton.vue";
-
-const { meal } = defineProps({
-  meal: {
-    type: Object,
-    required: true,
-  },
-});
-</script>

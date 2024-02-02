@@ -1,17 +1,17 @@
 import {
-  MealCategory,
-  MealFullItem,
-  MealIngredient,
-  MealShortItem,
-} from "../model";
+  MealCategoryDto,
+  MealFullItemDto,
+  MealIngredientDto,
+  MealShortItemDto,
+} from "@model/dto";
 
 export type State = {
-  categories: MealCategory[];
-  ingredients: MealIngredient[];
-  searchedMeals: MealFullItem[];
-  mealsByLetter: MealFullItem[];
-  mealsByIngredient: MealShortItem[];
-  mealsByCategory: MealShortItem[];
+  categories: MealCategoryDto[];
+  ingredients: MealIngredientDto[];
+  searchedMeals: MealFullItemDto[];
+  mealsByLetter: MealFullItemDto[];
+  mealsByIngredient: MealShortItemDto[];
+  mealsByCategory: MealShortItemDto[];
 };
 
 const state: State = {

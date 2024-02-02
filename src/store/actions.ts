@@ -1,5 +1,5 @@
 import { Commit } from "vuex/types/index.js";
-import axiosClient from "../axiosClient";
+import axiosClient from "@/axiosClient";
 
 interface ActionsContext {
   commit: Commit;

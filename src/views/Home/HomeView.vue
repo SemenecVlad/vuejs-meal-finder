@@ -1,6 +1,25 @@
+<script setup lang="ts">
+import { ComputedRef, computed, onMounted } from "vue";
+import TitleText from "@components/TitleText.vue";
+import { MealCategoryDto } from "@model/dto";
+import store from "@store";
+
+const categories: ComputedRef<MealCategoryDto[]> = computed(
+  () => store.state.categories
+);
+
+function getCategories(): void {
+  store.dispatch("getCategories");
+}
+
+onMounted(() => {
+  getCategories();
+});
+</script>
+
 <template>
   <div class="p-8">
-    <Title>Categories:</Title>
+    <TitleText>Categories:</TitleText>
     <div class="grid grid-cols-1 lg:grid-cols-6 md:grid-cols-4 gap-5">
       <router-link
         :to="{ name: 'byCategory', params: { category: category.strCategory } }"
@@ -18,22 +37,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { ComputedRef, computed, onMounted } from "vue";
-import Title from "../components/Title.vue";
-import { MealCategory } from "../model";
-import store from "../store";
-
-const categories: ComputedRef<MealCategory[]> = computed(
-  () => store.state.categories
-);
-
-function getCategories(): void {
-  store.dispatch("getCategories");
-}
-
-onMounted(() => {
-  getCategories();
-});
-</script>

@@ -5,6 +5,24 @@
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@assets": ["src/assets"],
+      "@assets/*": ["src/assets/*"],
+      "@views": ["src/views"],
+      "@views/*": ["src/views/*"],
+      "@components": ["src/components"],
+      "@components/*": ["src/components/*"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"],
+      "@router": ["src/router"],
+      "@router/*": ["src/router/*"],
+      "@model": ["src/model"],
+      "@model/*": ["src/model/*"],
+      "@helpers": ["src/helpers"],
+      "@helpers/*": ["src/helpers/*"]
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",

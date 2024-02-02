@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { foodImg } from "@assets/img";
+</script>
+
 <template>
   <header
     class="shadow h-32 md:h-18 lg:h-24 flex justify-between items-stretch bg-orange-500"
@@ -6,7 +10,7 @@
       <div
         class="inline-flex items-center h-full px-8 text-white font-bold text-2xl lg:text-3xl"
       >
-        <img :src="food" alt="logo" class="w-12 h-12 object-contain" />
+        <img :src="foodImg" alt="logo" class="w-12 h-12 object-contain" />
         <span class="ml-4 hidden sm:block">Meal Finder</span>
       </div>
     </router-link>
@@ -29,7 +33,3 @@
     </div>
   </header>
 </template>
-
-<script setup lang="ts">
-import food from "../assets/food.png";
-</script>

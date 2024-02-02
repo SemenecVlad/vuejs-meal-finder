@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+import { RouteLocationNormalizedLoaded, useRoute } from "vue-router";
+import axiosClient from "@/axiosClient";
+import { YouTubeButton, BackButton } from "@components";
+import { MealFullItemDto, MealShortItemDto } from "@model/dto";
+
+const meal = ref<MealFullItemDto | MealShortItemDto | any>({});
+const route: RouteLocationNormalizedLoaded = useRoute();
+
+onMounted(() => {
+  axiosClient
+    .get("lookup.php?i=" + route.params.id)
+    .then(({ data }) => {
+      meal.value = data.meals[0] || {};
+    })
+    .catch((error) => console.log(error))
+    .finally(() => console.log("Meal Details Loaded"));
+});
+</script>
+
 <template>
   <div class="p-8 pb-0">
     <BackButton />
@@ -50,28 +71,3 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { Ref, onMounted, ref } from "vue";
-import { RouteLocationNormalizedLoaded, useRoute } from "vue-router";
-import axiosClient from "../axiosClient";
-import YouTubeButton from "../components/YouTubeButton.vue";
-import { MealFullItem, MealShortItem } from "../model";
-import BackButton from "../components/BackButton.vue";
-
-const meal: Ref<MealFullItem | MealShortItem | any> = ref({});
-const route: RouteLocationNormalizedLoaded = useRoute();
-
-onMounted(() => {
-  console.log("Meal Details Loading", meal);
-  axiosClient
-    .get("lookup.php?i=" + route.params.id)
-    .then(({ data }) => {
-      meal.value = data.meals[0] || {};
-    })
-    .catch((error) => console.log(error))
-    .finally(() => console.log("Meal Details Loaded"));
-});
-</script>
-
-<style></style>
