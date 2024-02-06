@@ -1,8 +1,12 @@
 name: Demo Workflow
-on: workflow_dispatch
+on: push
 jobs:
-  print:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Print to console
-        run: echo Hello
+      - name: Get codebase
+        uses: actions/checkout@v4
+      - name: Install deps
+        run: npm ci
+      - name: Build the app
+        run: npm run build
