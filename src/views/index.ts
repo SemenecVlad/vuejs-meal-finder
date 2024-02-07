@@ -5,3 +5,6 @@ export { default as MealsByLetterView } from "./MealsByLetter/MealsByLetterView.
 export { default as IngredientsView } from "./Ingredients/IngredientsView.vue";
 export { default as MealsByIngredientsView } from "./MealsByIngredients/MealsByIngredientsView.vue";
 export { default as MealDetailsView } from "./MealDetails/MealDetailsView.vue";
+export { default as LoginView } from "./Authentication/LoginView.vue";
+export { default as RegistrationView } from "./Authentication/RegistrationView.vue";
+export { default as ForgotPasswordView } from "./Authentication/ForgotPasswordView.vue";

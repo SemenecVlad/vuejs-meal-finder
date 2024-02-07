@@ -6,3 +6,5 @@ export { default as MealsList } from "./MealsList.vue";
 export { default as TitleText } from "./TitleText.vue";
 export { default as HeaderNavbar } from "./HeaderNavbar.vue";
 export { default as YouTubeButton } from "./YouTubeButton.vue";
+export { default as SpinnerCircle } from "./SpinnerCircle.vue";
+export { default as AppInput } from "./AppInput.vue";

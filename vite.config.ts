@@ -6,11 +6,11 @@ import path from "path";
 export default defineConfig({
   plugins: [vue()],
   server: {
-    hmr: false,
+    hmr: true,
   },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "/src"),
+      "@": path.resolve(__dirname, "src"),
       "@views": path.resolve(__dirname, "src/views"),
       "@components": path.resolve(__dirname, "src/components"),
       "@router": path.resolve(__dirname, "src/router"),
