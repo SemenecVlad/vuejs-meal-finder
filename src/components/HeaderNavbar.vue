@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { auth } from "@/helpers/firebase";
 import { foodImg } from "@assets/img";
-import { signOut } from "firebase/auth";
+import { signOut, getAuth } from "firebase/auth";
+
+const auth = getAuth();
 
 const logout = () => {
   console.log("Sign out");
