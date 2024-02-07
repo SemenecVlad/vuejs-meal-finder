@@ -11,6 +11,8 @@ export const firebaseApp = initializeApp({
   appId: import.meta.env.VITE_APP_FIREBASE_APP_ID,
 });
 
+export const auth = getAuth();
+
 // // used for the firestore refs
 // const db = getFirestore(firebaseApp);
 

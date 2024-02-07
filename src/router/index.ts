@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, RouteLocationRaw } from "vue-router";
 import { DeafultLayout, GuestLayout } from "@components";
 import {
   HomeView,
@@ -62,7 +62,11 @@ const routes = [
   {
     path: "/auth",
     component: GuestLayout,
-    beforeEnter: (to, from, next) => {
+    beforeEnter: (
+      _: any,
+      __: any,
+      next: (to?: RouteLocationRaw) => void
+    ): void => {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           // If the user is logged in, redirect to the home page

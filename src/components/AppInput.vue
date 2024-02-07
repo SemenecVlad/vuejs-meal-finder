@@ -8,8 +8,9 @@
   />
 </template>
 
-<script>
-export default {
+<script setup>
+import { defineProps } from "vue";
+const { modelValue, type, placeholder } = defineProps({
   props: {
     modelValue: String,
     type: {
@@ -18,5 +19,5 @@ export default {
     },
     placeholder: String,
   },
-};
+});
 </script>
